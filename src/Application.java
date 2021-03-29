@@ -1,5 +1,6 @@
 
 public class Application {
+	public static int i = 1;
 
 	
 	public static void arrayException(String[] words) {
@@ -7,12 +8,7 @@ public class Application {
 			try {
 				System.out.println(words[z]);
 			} catch (ArrayIndexOutOfBoundsException e) {
-				System.out.println("Exception1: "+e.getClass().getSimpleName());
-				e.printStackTrace();
-				System.out.print("\nException hangling of ");
-				System.out.print(e.getClass().getSimpleName());
-				System.out.println(" completed (Exception1)");
-				System.out.println("\n####################\n");
+				printingExeption(e);
 			} finally {
 				
 			}
@@ -27,12 +23,7 @@ public class Application {
 		try {
 			Double year = Double.parseDouble(name);
 		} catch (NumberFormatException e) {
-			System.out.println("Exception2: "+e.getClass().getSimpleName());
-			e.printStackTrace();
-			System.out.print("\nException hangling of ");
-			System.out.print(e.getClass().getSimpleName());
-			System.out.println(" completed (Exception2)");
-			System.out.println("\n####################\n");
+			printingExeption(e);
 		}
 		
 	}
@@ -42,12 +33,7 @@ public class Application {
 			int a = 1 / 0;
 			
 		} catch (ArithmeticException e) {
-			System.out.println("Exception3: "+e.getClass().getSimpleName());
-			e.printStackTrace();
-			System.out.print("\nException hangling of ");
-			System.out.print(e.getClass().getSimpleName());
-			System.out.println(" completed (Exception3)");
-			System.out.println("\n####################\n");
+			printingExeption(e);
 		}
 		
 	}
@@ -57,23 +43,28 @@ public class Application {
 		try {
 			Class.forName(anyName);
 		} catch (ClassNotFoundException e) {
-			System.out.println("Exception4: "+e.getClass().getSimpleName());
-			e.printStackTrace();
-			System.out.print("\nException hangling of ");
-			System.out.print(e.getClass().getSimpleName());
-			System.out.println(" completed (Exception4)");
-			System.out.println("\n####################\n");
+			printingExeption(e);
 		}
+	}
+	
+	public static void printingExeption(Exception e) {
+		System.out.println("Exception"+i+": "+e.getClass().getSimpleName());
+		e.printStackTrace();
+		System.out.print("\nException hangling of ");
+		System.out.print(e.getClass().getSimpleName());
+		System.out.println(" completed (Exception"+i+")");
+		System.out.println("\n####################\n");
+		i++;
 	}
 	
 	
 	public static void main(String[] args) {
 		String[] words = new String[10];
-		
+	
 		arrayException(words);
 		
 		numberException();
-	
+		
 		arethmeticException();
 		
 		classNotFoundException();
@@ -82,13 +73,7 @@ public class Application {
 		try {
 			exc.comparison();
 		} catch (BregovicException e) {
-			System.out.println("Exception5: "+e.getClass().getSimpleName());
-			e.printStackTrace();
-			System.out.print("\nException hangling of ");
-			System.out.print(e.getClass().getSimpleName());
-			System.out.println(" completed (Exception5)");
-			System.out.println("\n####################");
-			System.out.println("Programm execution finished :-)");
+			printingExeption(e);
 		}
 		
 	}
