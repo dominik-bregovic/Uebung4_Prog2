@@ -69,13 +69,13 @@ public class Application {
 		
 		classNotFoundException();
 		
-		BregovicException exc = new BregovicException("");
+		BregovicException exc = new BregovicException();
 		try {
 			exc.comparison();
 		} catch (BregovicException e) {
 			printingExeption(e);
 		}
-		
+		System.out.println("Programm execution finished :-)");
 	}
 
 }
