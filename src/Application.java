@@ -1,7 +1,15 @@
 
 public class Application {
+	
+	/*
+	 * Exceptionhandling
+	 * a few exceptions are thrown on purpose to improve an understanding for them
+	 * Author: Dominik Bregovic
+	 * Last change: 29.03.2021
+	 */
+	
+	
 	public static int i = 1;
-
 	
 	public static void arrayException(String[] words) {
 			int z = 10;
@@ -48,13 +56,23 @@ public class Application {
 	}
 	
 	public static void printingExeption(Exception e) {
-		System.out.println("Exception"+i+": "+e.getClass().getSimpleName());
-		e.printStackTrace();
-		System.out.print("\nException hangling of ");
-		System.out.print(e.getClass().getSimpleName());
-		System.out.println(" completed (Exception"+i+")");
-		System.out.println("\n####################\n");
-		i++;
+		if (i != 5) {
+			System.out.println("Exception"+i+": "+e.getClass().getSimpleName());
+			e.printStackTrace();
+			System.out.print("\nException hangling of ");
+			System.out.print(e.getClass().getSimpleName());
+			System.out.println(" completed (Exception"+i+")");
+			System.out.println("\n####################\n");
+			i++;
+		} else {
+			System.out.println("Exception"+i+": "+e.getClass().getSimpleName());
+			e.printStackTrace();
+			System.out.print("\nException hangling of ");
+			System.out.print(e.getClass().getSimpleName());
+			System.out.println(" completed (Exception"+i+")");
+			System.out.println("\n####################");
+			System.out.println("Programm execution finished :-)");
+		}
 	}
 	
 	
@@ -75,7 +93,7 @@ public class Application {
 		} catch (BregovicException e) {
 			printingExeption(e);
 		}
-		System.out.println("Programm execution finished :-)");
+		
 	}
 
 }
